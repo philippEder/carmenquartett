@@ -1,0 +1,19 @@
+<section class="container">
+  <h2>Contact / Bookings</h2>
+  <div class="card">
+    <div *ngIf="!submitted">
+      <form (ngSubmit)="submit()" class="contact-form">
+        <label>Name</label>
+        <input [(ngModel)]="model.name" name="name" required>
+        <label>Email</label>
+        <input [(ngModel)]="model.email" name="email" required>
+        <label>Message</label>
+        <textarea [(ngModel)]="model.message" name="message" rows="5" required></textarea>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+    <div *ngIf="submitted">
+      <h3>Thanks — we'll get back to you soon!</h3>
+    </div>
+  </div>
+</section>

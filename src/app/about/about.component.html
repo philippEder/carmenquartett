@@ -1,0 +1,11 @@
+<section class="container">
+  <h2>About CarmenQuartett</h2>
+  <p style="color:var(--muted)">CarmenQuartett is dedicated to bringing a fresh voice to classical chamber music, commissioning new works and exploring modern arrangements.</p>
+
+  <div class="grid" style="margin-top:18px">
+    <div *ngFor="let m of members" class="card">
+      <div style="font-weight:700">{{m.name}}</div>
+      <div style="color:var(--muted);margin-top:6px">{{m.bio}}</div>
+    </div>
+  </div>
+</section>

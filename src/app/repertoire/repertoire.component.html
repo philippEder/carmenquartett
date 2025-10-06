@@ -1,0 +1,8 @@
+<section class="container">
+  <h2>Repertoire</h2>
+  <ul>
+    <li *ngFor="let w of works" style="margin:8px 0">
+      <strong>{{w.title}}</strong> <span style="color:var(--muted)">({{w.year}})</span>
+    </li>
+  </ul>
+</section>

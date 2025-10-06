@@ -1,0 +1,61 @@
+<section class="hero">
+  <img style="width: 100%;" src="/assets/images/title-wide.png" alt="image">
+</section>
+
+<section id="about" class="card">
+  <div class="centered">
+      <div class="hero-text text">
+        <h1>{{hero.title}}</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br/> 
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br/> <br/>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br/> At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+        </p>
+        <button class="btn" routerLink="/contact">Book us</button>
+    </div>
+    <div>
+      <img class="middle-img" src="/assets/images/title-wide.png" alt="image">
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>{{hero.title}}</h1>
+      <p>{{hero.subtitle}}</p>
+      <button class="btn" routerLink="/contact">Book us</button>
+    </div>
+    <div style="flex:1">
+      <div class="card">
+        <h3 style="margin-top:0">Upcoming Concerts</h3>
+        <div *ngFor="let gig of upcoming" style="padding:8px 0;border-bottom:1px dashed #eee">
+          <div style="font-weight:600">{{gig.date}} — {{gig.place}}</div>
+          <div style="color:var(--muted);font-size:14px">{{gig.venue}} · {{gig.program}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-top:10px">
+  <h2>Featured recordings</h2>
+  <div class="grid">
+    <div class="card">
+      <h4>String Waves (2024)</h4>
+      <p style="color:var(--muted)">A selection of new works for quartet.</p>
+      <button class="btn">Listen</button>
+    </div>
+    <div class="card">
+      <h4>Reflections (2023)</h4>
+      <p style="color:var(--muted)">Quartet arrangements of contemporary songs.</p>
+      <button class="btn">Listen</button>
+    </div>
+  </div>
+</section>
+
+
+
