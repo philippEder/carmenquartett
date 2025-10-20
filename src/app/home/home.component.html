@@ -1,16 +1,12 @@
-<section class="hero">
+<section id="home" class="hero">
   <img style="width: 100%;" src="/assets/images/title-wide.png" alt="image">
 </section>
 
 <section id="about" class="card">
   <div class="centered">
       <div class="hero-text text">
-        <h1>{{hero.title}}</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br/> 
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br/> <br/>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br/> At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-        </p>
+        <h1>Carmen Quartett</h1>
+        <p>Mehr als Mozart <br/> <br/>  Seit 2014 spielen Marianne Brandstettner (Violine), Vanessa Peham (Violine), Lucia Schwendinger (Bratsche) und Carmen Duschlbauer (Cello) im selben Takt – zumindest meistens. <br/><br/>  Was an der Bruckneruni begann, führt das Linzer Streichquartett heute von klassischen Bühnen über Bauernhöfe bis hin zu musikalischen Galaxien. <br/><br/> Das Carmen Quartett mixt Tradition mit Innovation, Streichersound mit Riffs und Dancing Queen mit Bach Kantaten - und kommt dabei voll ohne Mischpult aus. Ob Mozart oder Weltmusik – wir setzen auf erstklassige Acoustics mit Stil. Gänsehaut? Garantiert!</p>
         <button class="btn" routerLink="/contact">Book us</button>
     </div>
     <div>
@@ -20,27 +16,31 @@
 </section>
 
 
-
-
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <h1>{{hero.title}}</h1>
-      <p>{{hero.subtitle}}</p>
-      <button class="btn" routerLink="/contact">Book us</button>
+<section id="feste">
+  <div class="centered">
+    <div>
+      <iframe class="middle-img" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
     </div>
-    <div style="flex:1">
-      <div class="card">
-        <h3 style="margin-top:0">Upcoming Concerts</h3>
-        <div *ngFor="let gig of upcoming" style="padding:8px 0;border-bottom:1px dashed #eee">
-          <div style="font-weight:600">{{gig.date}} — {{gig.place}}</div>
-          <div style="color:var(--muted);font-size:14px">{{gig.venue}} · {{gig.program}}</div>
-        </div>
-      </div>
+     <div class="hero-text text">
+        <h1>Feste</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br/> 
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br/> <br/>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <br/> At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+        </p>
     </div>
   </div>
 </section>
 
+
+
+
+<section id="concerts" class="card">
+  <app-concerts></app-concerts>
+
+</section>
+
+<!--
 <section class="container" style="padding-top:10px">
   <h2>Featured recordings</h2>
   <div class="grid">
@@ -55,7 +55,9 @@
       <button class="btn">Listen</button>
     </div>
   </div>
+</section> -->
+
+
+<section class="container">
+  <app-contact></app-contact>
 </section>
-
-
-

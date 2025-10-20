@@ -13,9 +13,4 @@ export class HomeComponent {
   };
 
 
-  upcoming = [
-    { date: '2025-10-18', place: 'Wien', venue: 'Musikverein', program: 'Beethoven & modern pieces' },
-    { date: '2025-11-02', place: 'Graz', venue: 'Kulturhaus', program: 'Contemporary evening' }
-  ];
-
 }

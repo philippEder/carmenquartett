@@ -7,6 +7,8 @@ import { AboutComponent } from './about/about.component';
 import { RepertoireComponent } from './repertoire/repertoire.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { ConcertsComponent } from './concerts/concerts.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +24,9 @@ const routes: Routes = [
     HomeComponent,
     AboutComponent,
     RepertoireComponent,
-    ContactComponent
+    ContactComponent,
+    HeaderComponent,
+    ConcertsComponent
   ],
   imports: [
     BrowserModule,

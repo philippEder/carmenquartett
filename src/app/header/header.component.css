@@ -1,0 +1,26 @@
+.social-icon {
+  font-size: 3em; 
+  color: var(--accent);  
+  transition: color 0.3s ease; 
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #007bff; 
+}
+
+.social-icon.instagram:hover {
+  color: #E4405F;
+}
+
+.social-icon.facebook {
+  color: #1877F2;
+}
+
+.social-icon.facebook:hover {
+  color: #1877F2;
+}
+
+.nav-buttons {
+    margin-left: auto;
+}

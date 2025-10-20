@@ -1,0 +1,22 @@
+.concert {
+    margin-top: 0px;
+    
+}
+
+.concert-image {
+    width: 373px;
+    height: 524px;
+}
+
+.concert-details {
+    max-width: 373px;
+}
+
+.concert-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.concert-description {
+    margin: 5px;
+}

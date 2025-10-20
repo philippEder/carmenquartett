@@ -9,10 +9,4 @@ export class AppComponent {
   
   title = 'CarmenQuartett';
 
-  smoothScrollTo(id: string, ) {
-      let options: ScrollIntoViewOptions = {
-        behavior: 'smooth'
-      }
-      document.getElementById(id).scrollIntoView(options)
-  }
 }

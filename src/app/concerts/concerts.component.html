@@ -1,0 +1,15 @@
+<div class="centered-alt">
+    <h1>Konzerte</h1>
+  </div>
+    <div class="centered">
+      <div *ngFor="let gig of upcoming" class="concert">
+          <img class="concert-image" [src]="gig.image">
+          <div class="concert-details">
+            <div class="concert-title">{{gig.title}}</div>
+            <div class="concert-description">{{gig.description}}</div>
+            <div *ngFor="let theDate in gig.dates">
+                <div class="concert-description">{{theDate}}</div>
+            </div>
+          </div>
+      </div>
+  </div>

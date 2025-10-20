@@ -1,18 +1,4 @@
-<header class="container header">
-  <div class="brand">
-    <div class="logo">CQ</div>
-    <div>
-      <div style="font-weight:700">CarmenQuartett</div>
-      <div style="font-size:12px;color:var(--muted)">String quartet</div>
-    </div>
-  </div>
-  <nav>
-    <a routerLink="">Home</a>
-    <a (click)="smoothScrollTo('about')">About</a>
-    <a routerLink="repertoire">Repertoire</a>
-    <a routerLink="contact">Contact</a>
-  </nav>
-</header>
+<app-header></app-header>
 
 <main class="container main">
   <router-outlet></router-outlet>
@@ -21,6 +7,8 @@
 <footer class="container footer">
   <div style="display:flex;justify-content:space-between;align-items:center">
     <div>© CarmenQuartett — All rights reserved</div>
-    <div>Follow us: <span style="color:var(--accent)">Instagram</span> • <span style="color:var(--accent)">Facebook</span></div>
+     <a class="footer-link" href="https://www.instagram.com/carmen_quartett" target="_blank" rel="noopener noreferrer">
+            Follow us on Instagram <i class="fab fa-instagram"></i>
+     </a>
   </div>
 </footer>
