@@ -20,18 +20,18 @@ export class ConcertsComponent {
     {
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
         title: 'Nordlichter', 
-        dates: ["Musikschule Schallerbach, 9.6.2024 10:30", "Zuhause, 10.6.2024 10:30", "15.6.2024 10:30"], 
+        dates: ["Musikschule Schallerbach, 9.6.2024 10:30", "Zuhause, 10.6.2024 10:30", "Brucknerhaus 18, 15.6.2024 10:30"], 
         description: 'Ausflug nach ganz Oben. Die Polarlichter vertont. An diesem Abend empführen sie Carmen und die Anderen irgendwohin. Ich brauche einen langen Text zum Testen.' 
     },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
         title: 'Südlichter', 
-        dates: ["9.6.2024 10:30"], 
+        dates: ["Brucknerhaus 18, 9.6.2024 10:30"], 
         description: '9.6.2024, 10:30' },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
         title: 'Ostlichter', 
-        dates: ["9.6.2024 10:30"], 
+        dates: ["Brucknerhaus 18, 9.6.2024 10:30"], 
         description: 'Eintritt frei' 
     }
   ];

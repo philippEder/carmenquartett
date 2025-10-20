@@ -31,5 +31,8 @@
       }
     }
   },
-  "defaultProject": "carmenquartett"
+  "defaultProject": "carmenquartett",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -7,7 +7,7 @@
           <div class="concert-details">
             <div class="concert-title">{{gig.title}}</div>
             <div class="concert-description">{{gig.description}}</div>
-            <div *ngFor="let theDate in gig.dates">
+            <div *ngFor="let theDate of gig.dates">
                 <div class="concert-description">{{theDate}}</div>
             </div>
           </div>
