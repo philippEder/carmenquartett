@@ -18,3 +18,4 @@ This is a Angular application for the Carmen Quartett website.
 - css fixes and mobile responsiveness
 - change texts, images and video
 - make visible for search engines (google)
+- add a favicon

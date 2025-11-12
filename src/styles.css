@@ -76,11 +76,18 @@ p {
   max-width: 625px;
 }
 
-@media(min-width:900px){
+@media(min-width:1500px){
   .hero-inner{padding:24px}
+
+  .mobile-only {
+    display: none !important;
+  }
+  .desktop-only {
+    display: block !important;
+  }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1500px) {
   .centered {
     display: block;
     margin: 25px 9%;
@@ -89,7 +96,18 @@ p {
   .card { 
     padding: 0px;
   }
-  
+
+  .text {
+    max-width: 100%;
+  } 
+
+  .mobile-only {
+    display: block !important;
+  }
+  .desktop-only {
+    display: none !important;
+  }
+
 }
 
 
@@ -107,22 +125,4 @@ p {
 
 .header-nav {
   cursor: pointer;
-}
-
-@media (max-width: 767px) {
-  .mobile-only {
-    display: block !important;
-  }
-  .desktop-only {
-    display: none !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .mobile-only {
-    display: none !important;
-  }
-  .desktop-only {
-    display: block !important;
-  }
 }

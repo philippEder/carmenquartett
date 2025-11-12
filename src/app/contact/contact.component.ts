@@ -29,10 +29,14 @@ export class ContactComponent {
     };
 
     emailjs.send(this.serviceId, this.templateId, templateParams)
-      .then((response) => {
-        this.submitted = true;
-      }, (error) => {
+      .then(
+        (response) => {
+          this.submitted = true;
+        }, 
+        
+        (error) => {
          console.error('Email sending failed:', error);
-      });
+        }
+      );
   }
 }
