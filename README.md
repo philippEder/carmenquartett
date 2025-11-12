@@ -1,7 +1,6 @@
-# CarmenQuartett — Angular scaffold
+# CarmenQuartett
 
-This is a lightweight Angular application scaffold for the CarmenQuartett website.
-It uses a simple responsive layout inspired by the design and layout of the reference site.
+This is a Angular application for the Carmen Quartett website.
 
 ## How to run locally
 
@@ -9,20 +8,13 @@ It uses a simple responsive layout inspired by the design and layout of the refe
 2. From the project root (where package.json is), run:
    ```bash
    npm install
-   npx ng serve --open
-   ```
-   or
-   ```bash
-   npm install
-   npm run start
+   npm start
    ```
 
 3. The app will open at http://localhost:4200
 
 ## Notes & next steps
 
-- Replace placeholder assets in `src/assets` (images, audio).
-- Hook the contact form to your email backend or a service like Formspree.
-- Consider adding proper icons, fonts, and analytics as needed.
-
-This scaffold is intentionally minimal so you can customize it freely.
+- css fixes and mobile responsiveness
+- change texts, images and video
+- make visible for search engines (google)
