@@ -24,3 +24,9 @@
 .nav-buttons {
     margin-left: auto;
 }
+
+@media(max-width: 900px) {
+  .nav-buttons {
+    display: none
+  }
+}
