@@ -1,17 +1,19 @@
 <div class="card">
-  <h2>Contact / Bookings</h2>
-  <div *ngIf="!submitted">
-    <form (ngSubmit)="submit()" class="contact-form">
-      <label>Name</label>
-      <input [(ngModel)]="senderName" name="name" required>
-      <label>Email</label>
-      <input [(ngModel)]="senderEmail" name="email" required>
-      <label>Nachricht</label>
-      <textarea [(ngModel)]="senderMessage" name="message" rows="5" required></textarea>
-      <button class="btn" type="submit">Nachricht versenden</button>
-    </form>
-  </div>
-  <div *ngIf="submitted">
-    <h3>Danke für Ihre Anfrage!</h3>
+  <div class="hero-text centered">
+    <h1>Kontakt</h1>
+    <div *ngIf="!submitted">
+      <form (ngSubmit)="submit()" class="contact-form">
+        <label>Name</label>
+        <input [(ngModel)]="senderName" name="name" required>
+        <label>Email</label>
+        <input [(ngModel)]="senderEmail" name="email" required>
+        <label>Nachricht</label>
+        <textarea [(ngModel)]="senderMessage" name="message" rows="5" required></textarea>
+        <button class="btn" type="submit">Nachricht versenden</button>
+      </form>
+    </div>
+    <div *ngIf="submitted">
+      <h3>Danke für Ihre Anfrage!</h3>
+    </div>
   </div>
 </div>

@@ -9,8 +9,9 @@
 }
 
 .concert-details {
+    margin: 0 auto;
     max-width: 373px;
-    height: 150px;
+    min-height: 150px;
 }
 
 .concert-title {
@@ -25,6 +26,12 @@
 @media(max-width: 1500px) {
   .concert-image {
     width: 100%;
+    height: 100%;
+    max-width: 1138px;
+  }
+
+  .concert-details {
+    max-width: 85%; 
   }
   
 }

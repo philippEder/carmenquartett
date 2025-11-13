@@ -8,6 +8,11 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:#111}
 .container{max-width:var(--maxw);margin:0 auto;}
+
+h1 {
+  margin-top: 0px;
+}
+
 .header {
   background-color: #fff8f9;
   width: 100%;
@@ -58,10 +63,10 @@ p {
 }
 
 .centered {
-  margin-left: 13%;
-  margin-right: 13%;
-  margin-top:50px;
-  margin-bottom:50px;
+  padding-left: 13%;
+  padding-right: 13%;
+  padding-top:50px;
+  padding-bottom:50px;
   display:flex;
   gap:32px;
   align-items:center;
@@ -87,10 +92,19 @@ p {
   }
 }
 
+.toggle {
+  display: inline-block;
+  margin-top: 5px;
+  color: dodgerblue;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
 @media(max-width: 1500px) {
   .centered {
     display: block;
-    margin: 25px 9%;
+    padding: 25px 9%;
   }
 
   .card { 
@@ -99,6 +113,17 @@ p {
 
   .text {
     max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 14;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+  } 
+
+  .text.expanded {
+    -webkit-line-clamp: unset;
+    overflow: visible;
   } 
 
   .mobile-only {
