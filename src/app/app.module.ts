@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { ConcertsComponent } from './concerts/concerts.component';
+import { MoreLessComponent } from './common/more-less-button/more-less-button.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
     RepertoireComponent,
     ContactComponent,
     HeaderComponent,
-    ConcertsComponent
+    ConcertsComponent,
+    MoreLessComponent
   ],
   imports: [
     BrowserModule,

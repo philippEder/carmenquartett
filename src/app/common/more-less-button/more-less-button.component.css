@@ -1,0 +1,6 @@
+.more-less-link {
+  cursor: pointer;
+  color: #0066cc;
+  text-decoration: underline;
+  user-select: none;
+}

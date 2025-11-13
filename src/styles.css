@@ -31,7 +31,7 @@ h1 {
 nav a{margin:0 10px;color:var(--muted);text-decoration:none}
 hero{display:block;padding:40px 0}
 .hero-inner{display:flex;gap:32px;align-items:center}
-.hero-text h1{font-size:40px;margin:0 0 12px}
+.hero-text h1{font-size:32px;margin:0 0 12px}
 .hero-text p{color:var(--muted);margin:0 0 20px}
 .card { 
   background:white;
@@ -92,15 +92,6 @@ p {
   }
 }
 
-.toggle {
-  display: inline-block;
-  margin-top: 5px;
-  color: dodgerblue;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 0.9rem;
-}
-
 @media(max-width: 1500px) {
   .centered {
     display: block;
@@ -113,17 +104,6 @@ p {
 
   .text {
     max-width: 100%;
-    display: -webkit-box;
-    -webkit-line-clamp: 14;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
-  } 
-
-  .text.expanded {
-    -webkit-line-clamp: unset;
-    overflow: visible;
   } 
 
   .mobile-only {
@@ -134,8 +114,6 @@ p {
   }
 
 }
-
-
 
 .middle-img {
   width:650px;
@@ -150,4 +128,11 @@ p {
 
 .header-nav {
   cursor: pointer;
+}
+
+.more-less-link {
+  cursor: pointer;
+  color: #0066cc;
+  text-decoration: underline;
+  user-select: none;
 }

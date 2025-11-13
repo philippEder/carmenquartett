@@ -4,11 +4,14 @@
 
 <section id="about" class="card">
   <div class="centered">
-    <div class="hero-text text">
+    <div id="carmenQuartettText" class="hero-text text">
         <h1>Carmen Quartett</h1>
         <p>Mehr als Mozart. <br/> <br/>  Seit 2014 spielen Marianne Brandstettner (Violine), Vanessa Lettner (Violine), Lucia Schwendinger (Bratsche) und Carmen Duschlbauer (Cello) im selben Takt – zumindest meistens. <br/><br/>  Was an der Bruckneruni begann, führt das Linzer Streichquartett heute von klassischen Bühnen über Bauernhöfe bis hin zu musikalischen Galaxien. <br/><br/> Das Carmen Quartett mixt Tradition mit Innovation, Streichersound mit Riffs und Dancing Queen mit Bach Kantaten - und kommt dabei voll ohne Mischpult aus. Ob Mozart oder Weltmusik – wir setzen auf erstklassige Acoustics mit Stil. Gänsehaut? Garantiert!</p>
     </div>
-    <a class="toggle mobile-only">mehr...</a>
+    <app-more-less
+       targetId="carmenQuartettText"
+       [maxLines]="11">
+    </app-more-less>
     <div class="desktop-only">
       <img class="middle-img" src="/assets/images/title-wide.png">
     </div>
@@ -26,7 +29,7 @@
     <div class="desktop-only">
       <iframe class="middle-img" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
     </div>
-     <div class="hero-text text">
+     <div id="festeText" class="hero-text text">
         <h1>Feste & Hochzeiten</h1>
         <p>
           Nie zu spät, um JA! zu sagen <br/><br/>
@@ -38,7 +41,10 @@
           Love Songs und originellen Crossovers.
         </p>
     </div>
-    <a class="toggle mobile-only">mehr...</a>
+    <app-more-less
+       targetId="festeText"
+       [maxLines]="11">
+    </app-more-less>
   </div>
   <div class="mobile-only">
     <iframe style="width: 100%;" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
