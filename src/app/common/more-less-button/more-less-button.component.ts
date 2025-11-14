@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, HostListener, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Config } from '../constants/Config';
 
 @Component({
   selector: 'app-more-less',
@@ -59,7 +60,7 @@ export class MoreLessComponent implements AfterViewInit {
   }
   
   private checkWidth() {
-    this.isMobile = window.innerWidth <= 1500;
+    this.isMobile = Config.isMobile();
   }
 
   toggle(): void {

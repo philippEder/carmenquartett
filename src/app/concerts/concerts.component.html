@@ -1,15 +1,35 @@
-<div class="centered-alt hero-text">
+<div>
+  <div class="centered-alt hero-text">
     <h1>Konzerte</h1>
-</div>
-  <div class="centered">
-      <div *ngFor="let gig of upcoming" class="concert">
-          <img class="concert-image" [src]="gig.image">
-          <div class="concert-details">
-            <div class="concert-title">{{gig.title}}</div>
-            <div class="concert-description">{{gig.description}}</div>
-            <div *ngFor="let theDate of gig.dates">
-                <div class="concert-description">{{theDate}}</div>
-            </div>
+  </div>
+
+  <div class="carousel-container">
+    
+    <!-- Left arrow -->
+    <button class="arrow" (click)="prev()">
+      ‹
+    </button>
+
+    <!-- Visible gigs -->
+    <div class="gigs-wrapper">
+      <div class="concert" *ngFor="let gig of visibleGigs">
+        <img class="concert-image" [src]="gig.image" />
+        <div class="concert-details">
+          <div class="concert-title">{{ gig.title }}</div>
+          <br/>
+          <div class="concert-description">{{ gig.description }}</div>
+          <br/>
+          <div *ngFor="let theDate of gig.dates">
+            <div class="concert-description">{{ theDate }}</div>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <!-- Right arrow -->
+    <button class="arrow" (click)="next()">
+      ›
+    </button>
+
   </div>
 </div>

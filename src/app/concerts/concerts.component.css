@@ -1,4 +1,4 @@
-.concert {
+/* .concert {
     margin-top: 0px;
     
 }
@@ -21,7 +21,7 @@
 
 .concert-description {
     margin: 5px;
-}
+} 
 
 @media(max-width: 1500px) {
   .concert-image {
@@ -34,4 +34,42 @@
     max-width: 85%; 
   }
   
+}
+
+*/
+
+.concert-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gigs-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.concert {
+  width: 450px;
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+.concert-image {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.arrow {
+  font-size: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
 }

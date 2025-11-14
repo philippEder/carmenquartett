@@ -19,4 +19,4 @@ This is a Angular application for the Carmen Quartett website.
 - change texts, images and video
 - make visible for search engines (google)
 - add a favicon
-- complete "more.." link
+- complete concerts carousel
