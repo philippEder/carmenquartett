@@ -1,7 +1,7 @@
 <div class="centered-alt hero-text">
     <h1>Konzerte</h1>
-  </div>
-    <div class="centered">
+</div>
+  <div class="centered">
       <div *ngFor="let gig of upcoming" class="concert">
           <img class="concert-image" [src]="gig.image">
           <div class="concert-details">
@@ -10,6 +10,6 @@
             <div *ngFor="let theDate of gig.dates">
                 <div class="concert-description">{{theDate}}</div>
             </div>
-          </div>
       </div>
   </div>
+</div>
