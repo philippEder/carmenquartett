@@ -6,7 +6,7 @@
   <div class="carousel-container">
     
     <!-- Left arrow -->
-    <button class="arrow" (click)="prev()">
+    <button class="arrow" [disabled]="isFirstVisible" (click)="prev()">
       ‹
     </button>
 
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Right arrow -->
-    <button class="arrow" (click)="next()">
+    <button class="arrow" [disabled]="isLastVisible" (click)="next()">
       ›
     </button>
 

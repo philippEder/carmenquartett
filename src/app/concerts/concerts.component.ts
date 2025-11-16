@@ -15,6 +15,8 @@ export class ConcertsComponent {
   amountOfGigsToShow = 3;
   currentIndex = 0;
   visibleGigs = [];
+  isFirstVisible = false;
+  isLastVisible = false;
 
   ngOnInit() {
     this.updateVisibleGigs();
@@ -28,6 +30,7 @@ export class ConcertsComponent {
   updateVisibleGigs() {
     this.amountOfGigsToShow = Config.isMobile() ? 1 : 3;
     this.visibleGigs = this.upcoming.slice(this.currentIndex, this.currentIndex + this.amountOfGigsToShow);
+    this.toggleArrows()
   }
 
   next() {
@@ -44,6 +47,14 @@ export class ConcertsComponent {
     }
   }
 
+  toggleArrows() {
+    let firstGig = this.upcoming[0];
+    let lastGig = this.upcoming[this.upcoming.length-1];
+
+    this.isFirstVisible = this.visibleGigs.indexOf(firstGig) > -1;
+    this.isLastVisible = this.visibleGigs.indexOf(lastGig) > -1;
+  }
+
   upcoming: Concert[] = [
     {
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
@@ -54,24 +65,24 @@ export class ConcertsComponent {
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
         title: 'Südlichter', 
-        dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
+        dates: ["09.07.2024 10:30 Brucknerhaus 18"], 
         description: 'Höhenflug mal anders. Dieses Mal gehts in Steilkurve der Sonne entgegen. Urlaubsfeeling garantiert!.' 
     },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
         title: 'Ostlichter', 
+        dates: ["09.08.2024 10:30 Brucknerhaus 18"], 
+        description: 'Eintritt frei' 
+    },
+    { 
+        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
+        title: 'Westlichter', 
         dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
         description: 'Eintritt frei' 
     },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Ostlichter', 
-        dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
-        description: 'Eintritt frei' 
-    },
-    { 
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Ostlichter', 
+        title: 'Mittellichter', 
         dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
         description: 'Eintritt frei' 
     }
