@@ -9,7 +9,7 @@ import { Config } from '../common/constants/Config'
 })
 export class ConcertsComponent {
 
-  CONCERT_IMAGES_BASE: string = "/assets/images/concerts/"
+  CONCERT_IMAGES_BASE: string = "assets/images/concerts/"
 
 
   amountOfGigsToShow = 3;
