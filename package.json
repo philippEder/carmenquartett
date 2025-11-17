@@ -8,7 +8,7 @@
     "build": "npx ng build",
     "test": "npx ng test",
     "lint": "npx ng lint",
-    "build:docs": "ng build --base-href /carmenquartett/ --deploy-url /carmenquartett/"
+    "build:docs": "ng build --base-href=/carmenquartett/ --deploy-url=/carmenquartett/"
   },
   "dependencies": {
     "@angular/animations": "^16.0.0",
