@@ -21,18 +21,6 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "baseHref": "/carmenquartett/",
-              "deployUrl": "/carmenquartett/",
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
           }
         },
         "serve": {
