@@ -7,7 +7,8 @@
     "start": "npx ng serve --open",
     "build": "npx ng build",
     "test": "npx ng test",
-    "lint": "npx ng lint"
+    "lint": "npx ng lint",
+    "build:docs": "ng build --output-path docs"
   },
   "dependencies": {
     "@angular/animations": "^16.0.0",
