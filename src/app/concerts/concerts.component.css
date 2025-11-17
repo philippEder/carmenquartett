@@ -73,3 +73,11 @@
   cursor: pointer;
   user-select: none;
 }
+
+@media(max-width: 1500px) {
+  .concert {
+    width: auto;
+    flex-shrink: unset;
+  }
+
+}

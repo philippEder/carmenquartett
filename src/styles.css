@@ -120,6 +120,11 @@ p {
   height: 450px;
 }
 
+.video {
+  width:700px;
+  height: 450px;
+}
+
 .small-img {
   width:350px;
   height: 525px;

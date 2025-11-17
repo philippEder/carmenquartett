@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="hero-text centered-alt">
+  <div style="padding-top: 20px;" class="hero-text centered-alt">
     <h1>Kontakt</h1>
     <div *ngIf="!submitted">
       <form (ngSubmit)="submit()" class="contact-form">
@@ -9,11 +9,11 @@
         <input [(ngModel)]="senderEmail" name="email" required>
         <label>Nachricht</label>
         <textarea [(ngModel)]="senderMessage" name="message" rows="5" required></textarea>
-        <button class="btn" type="submit">Nachricht versenden</button>
+        <button class="btn" style="margin-bottom: 15px;" type="submit">Nachricht versenden</button>
       </form>
     </div>
     <div *ngIf="submitted">
-      <h3>Danke für Ihre Anfrage!</h3>
+      <h3 style="padding: 15px">Danke für Ihre Anfrage!</h3>
     </div>
   </div>
 </div>
