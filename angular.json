@@ -23,7 +23,7 @@
             "scripts": []
           },
           "configurations": {
-            "ghpages": {
+            "production": {
               "baseHref": "/carmenquartett/",
               "deployUrl": "/carmenquartett/",
               "optimization": true,
