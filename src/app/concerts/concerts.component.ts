@@ -19,6 +19,8 @@ export class ConcertsComponent {
   isLastVisible = false;
 
   ngOnInit() {
+    this.computeAmountOfGigsToShow();
+    this.scrollToLastGig();
     this.updateVisibleGigs();
   }
 
@@ -28,9 +30,9 @@ export class ConcertsComponent {
   }
 
   updateVisibleGigs() {
-    this.amountOfGigsToShow = Config.isMobile() ? 1 : 3;
+    this.computeAmountOfGigsToShow();
     this.visibleGigs = this.upcoming.slice(this.currentIndex, this.currentIndex + this.amountOfGigsToShow);
-    this.toggleArrows()
+    this.toggleArrows();
   }
 
   next() {
@@ -55,13 +57,15 @@ export class ConcertsComponent {
     this.isLastVisible = this.visibleGigs.indexOf(lastGig) > -1;
   }
 
+  scrollToLastGig() {
+    this.currentIndex = this.upcoming.length - this.amountOfGigsToShow;
+  }
+
+  computeAmountOfGigsToShow() {
+    this.amountOfGigsToShow = Config.isMobile() ? 1 : 3;
+  }
+
   upcoming: Concert[] = [
-    {
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Nordlichter', 
-        dates: ["09.06.2024 10:30 Musikschule Schallerbach", "10.06.2024 10:30 Zuhause", "15.06.2024 10:30 Brucknerhaus 18"], 
-        description: 'Ausflug nach ganz Oben. Die Polarlichter vertont. An diesem Abend entführen Sie Carmen und die Anderen irgendwohin. Ich brauche einen langen Text zum Testen.' 
-    },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
         title: 'Südlichter', 
@@ -85,6 +89,12 @@ export class ConcertsComponent {
         title: 'Mittellichter', 
         dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
         description: 'Eintritt frei' 
+    },
+    {
+        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
+        title: 'Nordlichter', 
+        dates: ["09.06.2024 10:30 Musikschule Schallerbach", "10.06.2024 10:30 Zuhause", "15.06.2024 10:30 Brucknerhaus 18"], 
+        description: 'Ausflug nach ganz Oben. Die Polarlichter vertont. An diesem Abend entführen Sie Carmen und die Anderen irgendwohin. Ich brauche einen langen Text zum Testen.' 
     }
   ];
  
