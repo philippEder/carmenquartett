@@ -45,6 +45,8 @@ hero{display:block;padding:40px 0}
 
 p {
   font-size: larger;
+  text-align: justify;
+  hyphens: auto;
 }
 
 
