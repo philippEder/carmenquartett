@@ -19,8 +19,6 @@ export class ConcertsComponent {
   isLastVisible = false;
 
   ngOnInit() {
-    this.computeAmountOfGigsToShow();
-    this.scrollToLastGig();
     this.updateVisibleGigs();
   }
 
@@ -57,25 +55,21 @@ export class ConcertsComponent {
     this.isLastVisible = this.visibleGigs.indexOf(lastGig) > -1;
   }
 
-  scrollToLastGig() {
-    this.currentIndex = this.upcoming.length - this.amountOfGigsToShow;
-  }
-
   computeAmountOfGigsToShow() {
     this.amountOfGigsToShow = Config.isMobile() ? 1 : 3;
   }
 
   upcoming: Concert[] = [
-    { 
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Südlichter', 
-        dates: ["09.07.2024 10:30 Brucknerhaus 18"], 
-        description: 'Höhenflug mal anders. Dieses Mal gehts in Steilkurve der Sonne entgegen. Urlaubsfeeling garantiert!.' 
+    {
+        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg',
+        title: 'Nordlichter',
+        dates: ["09.06.2024 10:30 Musikschule Schallerbach", "10.06.2024 10:30 Zuhause", "15.06.2024 10:30 Brucknerhaus 18"],
+        description: 'Ausflug nach ganz Oben. Die Polarlichter vertont. An diesem Abend entführen Sie Carmen und die Anderen irgendwohin. Ich brauche einen langen Text zum Testen.'
     },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Ostlichter', 
-        dates: ["09.08.2024 10:30 Brucknerhaus 18"], 
+        title: 'Mittellichter', 
+        dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
         description: 'Eintritt frei' 
     },
     { 
@@ -86,15 +80,15 @@ export class ConcertsComponent {
     },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Mittellichter', 
-        dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
+        title: 'Ostlichter', 
+        dates: ["09.08.2024 10:30 Brucknerhaus 18"], 
         description: 'Eintritt frei' 
     },
-    {
+    { 
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Nordlichter', 
-        dates: ["09.06.2024 10:30 Musikschule Schallerbach", "10.06.2024 10:30 Zuhause", "15.06.2024 10:30 Brucknerhaus 18"], 
-        description: 'Ausflug nach ganz Oben. Die Polarlichter vertont. An diesem Abend entführen Sie Carmen und die Anderen irgendwohin. Ich brauche einen langen Text zum Testen.' 
+        title: 'Südlichter', 
+        dates: ["09.07.2024 10:30 Brucknerhaus 18"], 
+        description: 'Höhenflug mal anders. Dieses Mal gehts in Steilkurve der Sonne entgegen. Urlaubsfeeling garantiert!.' 
     }
   ];
  
