@@ -15,6 +15,6 @@ This is a Angular application for the Carmen Quartett website.
 
 ## Notes & next steps
 
-- change texts, images and video
 - make visible for search engines (google)
 - hover effect for navigation
+- host somewhere with custom domain
