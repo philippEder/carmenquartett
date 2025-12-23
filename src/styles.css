@@ -35,7 +35,6 @@ hero{display:block;padding:40px 0}
 .hero-text p{color:var(--muted);margin:0 0 20px}
 .card { 
   background:white;
-  border-radius:12px;
   padding:18px;
   box-shadow:0 6px 18px rgba(0,0,0,0.06)
 }
@@ -81,6 +80,10 @@ p {
 
 .text {
   width: 700px;
+}
+
+.card-bottom {
+    margin-bottom: -4px;
 }
 
 @media(min-width:1500px){
