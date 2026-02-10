@@ -1,5 +1,6 @@
 :root{
-  --accent:#8b1e3f; 
+  --accent:#8b1e3f;
+  --card: white;  
   --bg:#fff0f0;
   --muted:#666;
   --maxw:100%;
@@ -14,7 +15,7 @@ h1 {
 }
 
 .header {
-  background-color: #fff8f9;
+  background-color: var(--card);
   width: 100%;
   position: fixed;
   display:flex;
@@ -34,7 +35,7 @@ hero{display:block;padding:40px 0}
 .hero-text h1{font-size:32px;margin:0 0 12px}
 .hero-text p{color:var(--muted);margin:0 0 20px}
 .card { 
-  background:white;
+  background:var(--card);
   padding:18px;
   box-shadow:0 6px 18px rgba(0,0,0,0.06)
 }
