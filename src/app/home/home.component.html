@@ -1,5 +1,28 @@
-<section id="home" class="hero">
-  <img style="width: 100%; margin-top: 71px;" class="card-bottom" src="./assets/images/title.webp">
+<section id="home" class="hero title-image-container">
+
+  <app-burger class="image-burger mobile-only"></app-burger>
+
+  <nav class="image-nav-buttons desktop-only">
+    <a class="image-header-nav" (click)="smoothScrollTo('home')">Home</a>
+    <a class="image-header-nav" (click)="smoothScrollTo('about')">Über uns</a>
+    <a class="image-header-nav" (click)="smoothScrollTo('feste')">Hochzeiten</a>  
+    <a class="image-header-nav" (click)="smoothScrollTo('concerts')">Konzerte</a>
+    <a class="image-header-nav" (click)="smoothScrollTo('contact')">Kontakt</a>
+  </nav>
+
+  <div class="image-elements-container">
+    <div>
+        <a href="https://www.instagram.com/carmen_quartett" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="book-us button-image-element">
+        <button class="btn" (click)="smoothScrollTo('contact')">Book us</button>
+      </div>
+  </div>
+  
+
+  <img class="card-bottom" src="./assets/images/title.webp">
 </section>
 
 <section id="about" class="card">
@@ -14,8 +37,9 @@
           targetId="carmenQuartettText"
           [maxLines]="11">
     </app-more-less>
-    <div class="desktop-only">
-      <img class="middle-img card-bottom" src="./assets/images/about.webp">
+
+    <div class="desktop-only about-image-container">
+      <img class="card-bottom" src="./assets/images/about.webp">
     </div>
   </div>
 
@@ -26,14 +50,19 @@
 </section>
 
 
-<section id="feste">
-  <div class="centered">
+<section id="feste" class="card" style="padding: 0px;">
+  <div class="centered" 
+       [ngStyle]="isMobile ? null: {
+              'background-image': 'url(./assets/images/background.webp)',
+              'background-repeat': 'no-repeat',
+              'background-size': 'cover'
+            }">
     <div class="desktop-only">
-      <iframe class="video" src="https://www.youtube.com/embed/jtTavABZbtg" allowfullscreen></iframe>
+      <iframe class="video" src="https://www.youtube.com/embed/eBkIowHwpKg" allowfullscreen></iframe>
     </div>
      <div id="festeText" class="hero-text text">
-        <h1>Feste & Hochzeiten</h1>
-        <p>
+        <h1 [ngStyle]="isMobile ? null: { color: 'white' }">Feste & Hochzeiten</h1>
+        <p class="feste-text">
           <i>Nie zu spät, um JA! zu sagen</i> <br/><br/>
 
           Wir gestalten Konzerte, umrahmen Feste, sorgen für den perfekten Soundtrack 
@@ -49,7 +78,7 @@
     </app-more-less>
   </div>
   <div class="mobile-only">
-    <iframe style="width: 100%; min-height: 230px;" class="card-bottom" src="https://www.youtube.com/embed/jtTavABZbtg"></iframe>
+    <iframe style="width: 100%; min-height: 230px;" class="card-bottom" src="https://www.youtube.com/embed/eBkIowHwpKg" allowfullscreen></iframe>
   </div>
 </section>
 

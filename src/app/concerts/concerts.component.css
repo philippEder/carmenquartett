@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.concert-description {
+  min-height: 65px;
+}
+
 .carousel-container {
   display: flex;
   align-items: center;
@@ -26,6 +30,7 @@
 }
 
 .concert-image {
+  height: 608px;
   width: 100%;
   border-radius: 6px;
 }

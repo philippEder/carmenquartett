@@ -1,0 +1,17 @@
+<!-- Burger Button -->
+<button class="burger" (click)="toggleMenu()">
+  <span [class.open]="isOpen"></span>
+  <span [class.open]="isOpen"></span>
+  <span [class.open]="isOpen"></span>
+</button>
+
+<!-- Overlay -->
+<div class="overlay" [class.show]="isOpen">
+  <nav class="menu">
+    <a (click)="onMenuClick('home')">Home</a>
+    <a (click)="onMenuClick('about')">Über uns</a>
+    <a (click)="onMenuClick('feste')">Hochzeiten</a>  
+    <a (click)="onMenuClick('concerts')">Konzerte</a>
+    <a (click)="onMenuClick('contact')">Kontakt</a>
+  </nav>
+</div>

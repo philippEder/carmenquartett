@@ -17,11 +17,12 @@
         <div class="concert-details">
           <div class="concert-title">{{ gig.title }}</div>
           <br/>
-          <div class="concert-description">{{ gig.description }}</div>
-          <br/>
           <div *ngFor="let theDate of gig.dates">
-            <div class="concert-description">{{ theDate }}</div>
+            <div>{{ theDate }}</div>
           </div>
+          
+          <br/>
+          <div class="concert-description">{{ gig.description }}</div>
         </div>
       </div>
     </div>

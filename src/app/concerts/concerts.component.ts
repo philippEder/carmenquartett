@@ -61,34 +61,22 @@ export class ConcertsComponent {
 
   upcoming: Concert[] = [
     {
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg',
+        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.webp',
         title: 'Nordlichter',
-        dates: ["09.06.2024 10:30 Musikschule Schallerbach", "10.06.2024 10:30 Zuhause", "15.06.2024 10:30 Brucknerhaus 18"],
-        description: 'Ausflug nach ganz Oben. Die Polarlichter vertont. An diesem Abend entführen Sie Carmen und die Anderen irgendwohin. Ich brauche einen langen Text zum Testen.'
+        dates: ["22.05.2024 19:00 Vituskirche Oberregau",
+                "06.06.2024 10:30 RAUMSCHIFF Linz", 
+                "09.06.2024 10:30 Musikschule Schallerbach"
+               ],
+        description: 'Eintritt Frei'
     },
     { 
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Mittellichter', 
-        dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
-        description: 'Eintritt frei' 
-    },
-    { 
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Westlichter', 
-        dates: ["09.06.2024 10:30 Brucknerhaus 18"], 
-        description: 'Eintritt frei' 
-    },
-    { 
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Ostlichter', 
-        dates: ["09.08.2024 10:30 Brucknerhaus 18"], 
-        description: 'Eintritt frei' 
-    },
-    { 
-        image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.jpeg', 
-        title: 'Südlichter', 
-        dates: ["09.07.2024 10:30 Brucknerhaus 18"], 
-        description: 'Höhenflug mal anders. Dieses Mal gehts in Steilkurve der Sonne entgegen. Urlaubsfeeling garantiert!.' 
+        image: this.CONCERT_IMAGES_BASE + 'concert-carmenquartett.webp', 
+        title: 'Carmenquartett', 
+        dates: [
+                "11.07.2022 19:00 Kunst am Hof Spibach 6 4055 Pucking", 
+                "12.07.2022 19:30 Kerschbaum 61 4261 Rainbach i.M."
+              ], 
+        description: '' 
     }
   ];
  
