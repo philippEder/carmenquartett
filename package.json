@@ -6,9 +6,10 @@
     "ng": "ng",
     "start": "npx ng serve --open",
     "build": "npx ng build",
+    "build:docs": "ng build --output-path=docs --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
+    "build:base": "ng build --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
     "test": "npx ng test",
     "lint": "npx ng lint",
-    "build:docs": "ng build --output-path=docs --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
     "scully": "npx scully --",
     "scully:serve": "npx scully serve --"
   },
