@@ -87,6 +87,10 @@
     
 }
 
+.social-icon {
+    display: flex;
+}
+
 .feste-text {
     color: white;
 }
