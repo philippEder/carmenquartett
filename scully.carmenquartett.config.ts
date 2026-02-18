@@ -7,7 +7,7 @@ export const config: ScullyConfig = {
   projectRoot: "./src",
   projectName: "carmenquartett",
   // add spsModulePath when using de Scully Platform Server,
-  outDir: './dist/static',
+  outDir: './docs',
   routes: {
   }
 };
