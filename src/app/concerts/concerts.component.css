@@ -49,4 +49,8 @@
     flex-shrink: unset;
   }
 
+  .concert-image {
+    height: unset;
+  }
+
 }
