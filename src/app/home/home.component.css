@@ -57,7 +57,8 @@
 }
 
 .button-image-element {
-    margin-top: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .image-nav-buttons {

@@ -62,6 +62,7 @@ hero{display:block;padding:40px 0}
 .contact-form input, .contact-form textarea{width:100%;padding:10px;margin:6px 0;border:1px solid #e6e6e6;border-radius:6px}
 
 .btn{
+  height: 35px;
   background:var(--accent);
   color:white;
   padding:10px 14px;
