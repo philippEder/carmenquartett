@@ -61,6 +61,12 @@ export class ConcertsComponent {
 
   upcoming: Concert[] = [
     {
+        image: this.CONCERT_IMAGES_BASE + 'concert-brunch.webp',
+        title: 'Musik Brunch',
+        dates: ["TBA"],
+        description: ''
+    },
+    {
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.webp',
         title: 'Nordlichter',
         dates: ["22.05.2024 19:00 Vituskirche Oberregau",

@@ -11,6 +11,7 @@ body{margin:0;background:var(--bg);color:#111}
 .container{max-width:var(--maxw);margin:0 auto;}
 
 h1 {
+  font-family: 'Tangerine';
   margin-top: 0px;
 }
 
@@ -43,9 +44,12 @@ nav a:hover{
 
 hero{display:block;padding:40px 0}
 .hero-inner{display:flex;gap:32px;align-items:center}
+
 .hero-text h1 {
-  font-size:32px;margin:0 0 12px
+  font-size: 80px;;
+  margin:0 0 12px
 }
+
 .hero-text p {
   color:var(--muted);margin:0 0 20px
 }
@@ -115,11 +119,14 @@ p {
 }
 
 @media(min-width:1500px){
-  .hero-inner{padding:24px}
+  .hero-inner{
+    padding:24px
+  }
 
   .mobile-only {
     display: none !important;
   }
+
   .desktop-only {
     display: block !important;
   }
@@ -143,9 +150,14 @@ p {
     font-size: large;
   }
 
+  .hero-text h1 {
+    font-size: 50px;
+  }
+
   .mobile-only {
     display: block !important;
   }
+
   .desktop-only {
     display: none !important;
   }
@@ -206,4 +218,12 @@ background-image {
 
 .social-icon.facebook:hover {
   color: #1877F2;
+}
+
+@font-face {
+  font-family: 'Tangerine';
+  src: url('/assets/fonts/tangerine/Tangerine-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }

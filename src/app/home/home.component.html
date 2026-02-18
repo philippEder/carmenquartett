@@ -2,7 +2,7 @@
 
   <app-burger class="image-burger mobile-only"></app-burger>
 
-  <nav class="image-nav-buttons desktop-only">
+  <nav class="image-elements-container image-nav-buttons desktop-only">
     <a class="image-header-nav" (click)="smoothScrollTo('home')">Home</a>
     <a class="image-header-nav" (click)="smoothScrollTo('about')">Über uns</a>
     <a class="image-header-nav" (click)="smoothScrollTo('feste')">Hochzeiten</a>  
@@ -10,7 +10,11 @@
     <a class="image-header-nav" (click)="smoothScrollTo('contact')">Kontakt</a>
   </nav>
 
-  <div class="image-elements-container">
+  <div class="image-elements-container image-title">
+    <h1>Carmen Quartett</h1>
+  </div>
+
+  <div class="image-elements-container image-buttons">
     <div>
         <a href="https://www.instagram.com/carmen_quartett" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
             <i class="fab fa-instagram"></i>
@@ -28,7 +32,7 @@
 <section id="about" class="card">
   <div class="centered">
     <div id="carmenQuartettText" class="hero-text text">
-        <h1>Carmen Quartett</h1>
+        <h1 class="desktop-only">Carmen Quartett</h1>
         <p><i>Mehr als Mozart</i><br/><br/>
         Seit 2014 spielen Marianne Brandstettner (Violine), Vanessa Lettner (Violine), Lucia Schwendinger (Bratsche) und Carmen Duschlbauer (Cello) im selben Takt.<br/><br/>
         Was an der Bruckneruni begann, führt das Linzer Streichquartett heute von klassischen Bühnen über Bauernhöfe bis hin zu musikalischen Galaxien. <br/><br/> Das Carmen Quartett mixt Tradition mit Innovation, Streichersound mit Riffs und Dancing Queen mit Bach Kantaten - und kommt dabei voll ohne Mischpult aus. Ob Mozart oder Weltmusik – wir setzen auf erstklassige Acoustics mit Stil. Gänsehaut? Garantiert!</p>

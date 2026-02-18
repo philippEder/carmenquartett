@@ -15,6 +15,7 @@ This is a Angular application for the Carmen Quartett website.
 
 ## Notes & next steps
 
+- exchange title image with better quality one from carmen
+- exchange background image from "Feste & Hochzeiten" with better one from carmen
 - make visible for search engines (google)
-- hover effect for navigation
 - host somewhere with custom domain
