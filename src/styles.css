@@ -222,7 +222,7 @@ background-image {
 
 @font-face {
   font-family: 'Tangerine';
-  src: url('/assets/fonts/tangerine/Tangerine-Regular.ttf') format('truetype');
+  src: url('assets/fonts/tangerine/Tangerine-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
