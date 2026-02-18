@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { ConcertsComponent } from './concerts/concerts.component';
 import { MoreLessComponent } from './common/more-less-button/more-less-button.component';
 import { BurgerComponent } from './burger/burger.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,7 +36,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,9 @@
     "build": "npx ng build",
     "test": "npx ng test",
     "lint": "npx ng lint",
-    "build:docs": "ng build --output-path=docs --base-href=/carmenquartett/ --deploy-url=/carmenquartett/"
+    "build:docs": "ng build --output-path=docs --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
+    "scully": "npx scully --",
+    "scully:serve": "npx scully serve --"
   },
   "dependencies": {
     "@angular/animations": "^16.0.0",
@@ -21,6 +23,10 @@
     "@angular/router": "^16.0.0",
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^7.1.0",
+    "@scullyio/init": "^2.1.21",
+    "@scullyio/ng-lib": "^2.1.0",
+    "@scullyio/scully": "^2.1.0",
+    "@scullyio/scully-plugin-puppeteer": "^2.1.0",
     "rxjs": "^7.8.0",
     "zone.js": "^0.13.0"
   },
