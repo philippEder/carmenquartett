@@ -62,9 +62,13 @@ export class ConcertsComponent {
   upcoming: Concert[] = [
     {
         image: this.CONCERT_IMAGES_BASE + 'concert-brunch.webp',
-        title: 'Musik Brunch',
-        dates: ["TBA"],
-        description: ''
+        title: 'Musik Brunch - Kunst am Hof-Festival',
+        dates: ["09.08.2026 10:30 Sipbach 6 4055 Pucking"],
+        description: null,
+        link: {
+          link: 'https://kupfticket.com/en/events/crosscultural-musikbrunch-koste-die-welt',
+          text: 'Zu den Tickets'
+        }
     },
     {
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.webp',
@@ -73,7 +77,8 @@ export class ConcertsComponent {
                 "06.06.2024 10:30 RAUMSCHIFF Linz", 
                 "09.06.2024 10:30 Musikschule Schallerbach"
                ],
-        description: 'Eintritt Frei'
+        description: 'Eintritt Frei',
+        link: null
     },
     { 
         image: this.CONCERT_IMAGES_BASE + 'concert-carmenquartett.webp', 
@@ -82,7 +87,8 @@ export class ConcertsComponent {
                 "11.07.2022 19:00 Kunst am Hof Spibach 6 4055 Pucking", 
                 "12.07.2022 19:30 Kerschbaum 61 4261 Rainbach i.M."
               ], 
-        description: '' 
+        description: null,
+        link: null
     }
   ];
  

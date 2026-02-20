@@ -20,9 +20,9 @@
           <div *ngFor="let theDate of gig.dates">
             <div>{{ theDate }}</div>
           </div>
-          
           <br/>
-          <div class="concert-description">{{ gig.description }}</div>
+          <a *ngIf="gig.link" [href]="gig.link.link" target="_blank">{{gig.link.text}}</a>
+          <div *ngIf="gig.description" class="concert-description">{{ gig.description }}</div>
         </div>
       </div>
     </div>

@@ -1,1 +1,0 @@
-Put your images and audio files here. Add 'favicon.png' to replace the icon.
