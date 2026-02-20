@@ -8,6 +8,7 @@
     "build": "npx ng build",
     "build:docs": "ng build --output-path=docs --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
     "build:base": "ng build --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
+    "build:static": "npm run build && npm run scully",
     "test": "npx ng test",
     "lint": "npx ng lint",
     "scully": "npx scully --",
