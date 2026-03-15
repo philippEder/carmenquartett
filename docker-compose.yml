@@ -1,0 +1,17 @@
+services:
+  angular:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: docker/angular.dockerfile
+    ports:
+      - '4200:4200'
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /data/ssl:/ssl 
+    logging:
+      options:
+        max-size: "88m"
+        max-file: "4"
+    
