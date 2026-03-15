@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-burger',
   templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.css']
+  styleUrls: ['./burger.component.css'],
+  standalone: false
 })
 export class BurgerComponent {
 
@@ -29,7 +30,7 @@ export class BurgerComponent {
         let options: ScrollIntoViewOptions = {
             behavior: 'smooth'
         }
-        document.getElementById(id).scrollIntoView(options)
+        document?.getElementById(id)?.scrollIntoView(options)
   }
 
 }

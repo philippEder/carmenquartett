@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { ConcertsComponent } from './concerts/concerts.component';
 import { MoreLessComponent } from './common/more-less-button/more-less-button.component';
 import { BurgerComponent } from './burger/burger.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,20 +25,20 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    RepertoireComponent,
     ContactComponent,
     HeaderComponent,
     ConcertsComponent,
     MoreLessComponent,
     BurgerComponent
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    ScullyLibModule
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    provideClientHydration(withEventReplay())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

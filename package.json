@@ -2,41 +2,36 @@
   "name": "carmenquartett",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "ng": "ng",
-    "start": "npx ng serve --open",
-    "build": "npx ng build",
+    "start": "ng serve --open",
+    "build": "ng build",
     "build:docs": "ng build --output-path=docs --base-href=/carmenquartett/ --deploy-url=/carmenquartett/",
     "build:base": "ng build --configuration production --base-href /carmenquartett/",
-    "build:static": "npm run build:base && npm run scully",
-    "build:gh": "ng build --base-href /carmenquartett/ && scully --projectName carmenquartett",
-    "test": "npx ng test",
-    "lint": "npx ng lint",
-    "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
+    "test": "ng test",
+    "lint": "ng lint"
   },
   "dependencies": {
-    "@angular/animations": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/forms": "^16.0.0",
-    "@angular/platform-browser": "^16.0.0",
-    "@angular/platform-browser-dynamic": "^16.0.0",
-    "@angular/router": "^16.0.0",
+    "@angular/animations": "^21.2.2",
+    "@angular/common": "^21.2.2",
+    "@angular/compiler": "^21.2.2",
+    "@angular/core": "^21.2.2",
+    "@angular/forms": "^21.2.2",
+    "@angular/platform-browser": "^21.2.2",
+    "@angular/platform-browser-dynamic": "^21.2.2",
+    "@angular/platform-server": "^21.2.4",
+    "@angular/router": "^21.2.2",
+    "@angular/ssr": "^21.2.2",
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^7.1.0",
-    "@scullyio/init": "^2.1.21",
-    "@scullyio/ng-lib": "^2.1.0",
-    "@scullyio/scully": "^2.1.0",
-    "@scullyio/scully-plugin-puppeteer": "^2.1.0",
-    "rxjs": "^7.8.0",
-    "zone.js": "^0.13.0"
+    "rxjs": "^7.8.1",
+    "zone.js": "^0.16.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.0.0",
-    "@angular/cli": "^16.0.0",
-    "@angular/compiler-cli": "^16.0.0",
-    "typescript": "^5.1.6"
+    "@angular-devkit/build-angular": "^21.2.2",
+    "@angular/cli": "^21.2.2",
+    "@angular/compiler-cli": "^21.2.2",
+    "typescript": "^5.9.0"
   }
 }

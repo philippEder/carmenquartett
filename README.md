@@ -19,3 +19,4 @@ This is a Angular application for the Carmen Quartett website.
 - exchange background image from "Feste & Hochzeiten" with better one from carmen
 - make visible for search engines (google)
 - host somewhere with custom domain
+- setup deployment pipeline so we dont have to keep /dist /docs or /scully in repo
