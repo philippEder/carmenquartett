@@ -4,7 +4,8 @@ import { Config } from '../constants/Config';
 @Component({
   selector: 'app-more-less',
   templateUrl: './more-less-button.component.html',
-  styleUrls: ['./more-less-button.component.css']
+  styleUrls: ['./more-less-button.component.css'],
+  standalone: false
 })
 export class MoreLessComponent implements AfterViewInit {
 

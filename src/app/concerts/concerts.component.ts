@@ -5,7 +5,8 @@ import { Config } from '../common/constants/Config'
 @Component({
   selector: 'app-concerts',
   templateUrl: './concerts.component.html',
-  styleUrls: ['./concerts.component.css']
+  styleUrls: ['./concerts.component.css'],
+  standalone: false
 })
 export class ConcertsComponent {
 

@@ -3,7 +3,8 @@ import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html'
+  templateUrl: './contact.component.html',
+  standalone: false
 })
 export class ContactComponent {
 
@@ -11,9 +12,9 @@ export class ContactComponent {
   templateId: string = "template_dmz6crl";
   pub: string = "AsHWmySl4PnawMKdK";
 
-  senderName: string;
-  senderEmail: string;
-  senderMessage: string;
+  senderName?: string;
+  senderEmail?: string;
+  senderMessage?: string;
 
   submitted:  boolean = false;
 
