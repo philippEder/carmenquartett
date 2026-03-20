@@ -1,6 +1,6 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Concert } from './domain/Concert';
-import { Config } from '../common/constants/Config'
+import { ConfigService } from '../service/ConfigService';
 
 @Component({
   selector: 'app-concerts',
@@ -12,12 +12,13 @@ export class ConcertsComponent {
 
   CONCERT_IMAGES_BASE: string = "assets/images/concerts/"
 
-
   amountOfGigsToShow = 3;
   currentIndex = 0;
   visibleGigs = [];
   isFirstVisible = false;
   isLastVisible = false;
+
+  configService: ConfigService = inject(ConfigService);
 
   ngOnInit() {
     this.updateVisibleGigs();
@@ -57,7 +58,7 @@ export class ConcertsComponent {
   }
 
   computeAmountOfGigsToShow() {
-    this.amountOfGigsToShow = Config.isMobile() ? 1 : 3;
+    this.amountOfGigsToShow = this.configService.isMobile() ? 1 : 3;
   }
 
   upcoming: Concert[] = [

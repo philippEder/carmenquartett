@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { Config } from '../common/constants/Config';
+import { Component, HostListener, inject } from '@angular/core';
+import { ConfigService } from '../service/ConfigService';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,7 @@ export class HomeComponent {
 
   isMobile: boolean = false;
 
+  configService: ConfigService = inject(ConfigService);
 
   ngOnInit() {
       this.checkIsMobile();
@@ -18,11 +19,12 @@ export class HomeComponent {
   
   @HostListener('window:resize')
   onResize() {
-    this.checkIsMobile;
+    this.checkIsMobile();
   }
 
   checkIsMobile() {
-    this.isMobile = Config.isMobile();
+    this.isMobile = this.configService.isMobile();
+    console.log('isMobile: ' + this.isMobile);
   }
   
   smoothScrollTo(id: string) {

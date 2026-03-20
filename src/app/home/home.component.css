@@ -95,13 +95,13 @@
     color: white;
 }
 
-@media(min-width:1500px){
+@media(min-width: 1270px){
     .image-buttons {
         top: 63%;
     }
 }
 
-@media(max-width: 1500px) {
+@media(max-width: 1270px) {
     .title-image-container img {
         height: unset;
     }

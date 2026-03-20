@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { RepertoireComponent } from './repertoire/repertoire.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
@@ -15,7 +14,6 @@ import { BurgerComponent } from './burger/burger.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'repertoire', component: RepertoireComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' }
 ];
