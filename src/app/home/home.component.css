@@ -95,13 +95,31 @@
     color: white;
 }
 
-@media(min-width: 1270px){
+.feste-headline {
+    color: white;
+}
+
+.feste-headline-mobile   {
+    color: black !important;
+}
+
+.feste-background {
+    background-image: url(../../assets/images/background_2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.feste-background-mobile {
+    background-image: none !important;
+}
+
+@media(min-width: 1200px){
     .image-buttons {
         top: 63%;
     }
 }
 
-@media(max-width: 1270px) {
+@media(max-width: 1200px) {
     .title-image-container img {
         height: unset;
     }

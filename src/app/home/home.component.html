@@ -55,17 +55,12 @@
 
 
 <section id="feste" class="card" style="padding: 0px;">
-  <div class="centered" 
-       [ngStyle]="isMobile ? '': {
-              'background-image': 'url(./assets/images/background_2.webp)',
-              'background-repeat': 'no-repeat',
-              'background-size': 'cover'
-            }">
+  <div class="centered feste-background" [class.feste-background-mobile]="isMobile">
     <div class="desktop-only">
       <iframe class="video" src="https://www.youtube.com/embed/eBkIowHwpKg" allowfullscreen></iframe>
     </div>
      <div id="festeText" class="hero-text text">
-        <h1 [ngStyle]="isMobile ? null: { color: 'white' }">Feste & Hochzeiten</h1>
+        <h1 class="feste-headline" [class.feste-headline-mobile]="isMobile">Feste & Hochzeiten</h1>
         <p class="feste-text">
           <i>Nie zu spät, um JA! zu sagen</i> <br/><br/>
 

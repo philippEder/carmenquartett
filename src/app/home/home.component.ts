@@ -13,9 +13,10 @@ export class HomeComponent {
 
   configService: ConfigService = inject(ConfigService);
 
-  ngOnInit() {
-      this.checkIsMobile();
-    }
+  constructor() {
+    this.checkIsMobile();
+  }
+
   
   @HostListener('window:resize')
   onResize() {
@@ -24,7 +25,6 @@ export class HomeComponent {
 
   checkIsMobile() {
     this.isMobile = this.configService.isMobile();
-    console.log('isMobile: ' + this.isMobile);
   }
   
   smoothScrollTo(id: string) {

@@ -43,7 +43,7 @@
   user-select: none;
 }
 
-@media(max-width: 1270px) {
+@media(max-width: 1200px) {
   .concert {
     width: auto;
     flex-shrink: unset;

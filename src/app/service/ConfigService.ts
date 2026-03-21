@@ -5,7 +5,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class ConfigService {
   
   private platformId = inject(PLATFORM_ID);
-  static MOBILE_PIXEL_WIDTH = 1270;
+  static MOBILE_PIXEL_WIDTH = 1200;
 
   isMobile(): boolean {
     if (isPlatformBrowser(this.platformId)) {

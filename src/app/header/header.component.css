@@ -29,7 +29,7 @@
     margin-left: 20px;
 }
 
-@media(max-width: 1270px) {
+@media(max-width: 1200px) {
   .nav-buttons {
     display: none
   }
