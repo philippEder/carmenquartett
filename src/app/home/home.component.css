@@ -113,6 +113,13 @@
     background-image: none !important;
 }
 
+.clamp-fix {
+  line-height: 1.5; 
+  padding-top: 0;
+  padding-bottom: 0;
+  word-break: break-word;
+}
+
 @media(min-width: 1200px){
     .image-buttons {
         top: 63%;

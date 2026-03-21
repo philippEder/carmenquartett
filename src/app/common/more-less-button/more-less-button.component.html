@@ -1,3 +1,5 @@
-<a *ngIf="showToggle && isMobile" (click)="toggle()" class="more-less-link">
-  {{ expanded ? 'Weniger' : 'Mehr' }}
-</a>
+@if (showToggle && isMobile) {
+  <a (click)="toggle()" class="more-less-link">
+    {{ expanded ? 'Weniger' : 'Mehr' }}
+  </a>
+}
