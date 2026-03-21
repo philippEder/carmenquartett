@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, HostListener, ElementRef, Input, Renderer2, inject } from '@angular/core';
-import { ConfigService } from '../../service/ConfigService';
+import { BrowserService } from '../../service/BrowserService';
 
 @Component({
   selector: 'app-more-less',
@@ -22,7 +22,7 @@ export class MoreLessComponent implements AfterViewInit {
   
   isMobile = false;
 
-  configService: ConfigService = inject(ConfigService);
+  broswerService: BrowserService = inject(BrowserService);
 
   constructor(private renderer: Renderer2) {}
 
@@ -63,7 +63,7 @@ export class MoreLessComponent implements AfterViewInit {
   }
   
   private checkWidth() {
-    this.isMobile = this.configService.isMobile();
+    this.isMobile = this.broswerService.isMobile();
   }
 
   toggle(): void {

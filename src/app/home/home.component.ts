@@ -1,5 +1,5 @@
 import { Component, HostListener, inject } from '@angular/core';
-import { ConfigService } from '../service/ConfigService';
+import { BrowserService } from '../service/BrowserService';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent {
 
   isMobile: boolean = false;
 
-  configService: ConfigService = inject(ConfigService);
+  broswerService: BrowserService = inject(BrowserService);
 
   constructor() {
     this.checkIsMobile();
@@ -24,7 +24,7 @@ export class HomeComponent {
   }
 
   checkIsMobile() {
-    this.isMobile = this.configService.isMobile();
+    this.isMobile = this.broswerService.isMobile();
   }
   
   smoothScrollTo(id: string) {

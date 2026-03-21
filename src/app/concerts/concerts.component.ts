@@ -1,6 +1,6 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { Concert } from './domain/Concert';
-import { ConfigService } from '../service/ConfigService';
+import { BrowserService } from '../service/BrowserService';
 
 @Component({
   selector: 'app-concerts',
@@ -18,7 +18,7 @@ export class ConcertsComponent {
   isFirstVisible = false;
   isLastVisible = false;
 
-  configService: ConfigService = inject(ConfigService);
+  broswerService: BrowserService = inject(BrowserService);
 
   ngOnInit() {
     this.updateVisibleGigs();
@@ -58,7 +58,18 @@ export class ConcertsComponent {
   }
 
   computeAmountOfGigsToShow() {
-    this.amountOfGigsToShow = this.configService.isMobile() ? 1 : 3;
+    let amountOfGigsToShow = 3;
+
+
+    if (this.broswerService.isMobile()) {
+      amountOfGigsToShow = 1;
+    } else {
+      if (this.broswerService.getInnerWidth() <= 1500) {
+        amountOfGigsToShow = 2;
+      }
+    }
+
+    this.amountOfGigsToShow = amountOfGigsToShow;
   }
 
   upcoming: Concert[] = [
