@@ -30,11 +30,11 @@ export class MoreLessComponent implements AfterViewInit {
     this.checkWidth();
   }
 
-  @HostListener('window:resize')
+  /*@HostListener('window:resize')
   onResize() {
     this.checkWidth();
     this.apply();
-  }
+  }*/
 
   ngAfterViewInit(): void {
     this.apply();
