@@ -1,4 +1,11 @@
+:host {
+  width: 100%;
+  flex-shrink: 0;
+}
+
 .more-less-link {
+  display: inline-block;
+  margin-top: 0.35rem;
   cursor: pointer;
   color: #0066cc;
   text-decoration: underline;

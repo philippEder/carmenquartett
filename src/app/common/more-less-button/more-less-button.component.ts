@@ -1,77 +1,129 @@
-import { AfterViewInit, Component, HostListener, ElementRef, Input, Renderer2, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  Input,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+  inject,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { BrowserService } from '../../service/BrowserService';
 
 @Component({
   selector: 'app-more-less',
   templateUrl: './more-less-button.component.html',
   styleUrls: ['./more-less-button.component.css'],
-  standalone: false
+  standalone: false,
 })
-export class MoreLessComponent implements AfterViewInit {
-
+export class MoreLessComponent implements OnInit, AfterViewInit {
   @Input() targetId!: string;
   @Input() maxLines: number = 3;
 
   expanded = false;
-  showToggle = false;
 
-  private targetEl!: HTMLElement;
-  private fullHeight = 0;
-  private clampedHeight = 0;
+  /** True when line-clamp would hide part of the copy. */
+  textTruncated = false;
 
-  
+  /** True on phones/tablets (max width 1200px); false on desktop. */
   isMobile = false;
 
-  broswerService: BrowserService = inject(BrowserService);
+  private targetEl: HTMLElement | null = null;
 
-  constructor(private renderer: Renderer2) {}
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly browserService = inject(BrowserService);
 
-  ngOnInit() {
+  constructor(
+    private renderer: Renderer2,
+    private cdr: ChangeDetectorRef,
+  ) {}
+
+  ngOnInit(): void {
     this.checkWidth();
   }
-
-  /*@HostListener('window:resize')
-  onResize() {
-    this.checkWidth();
-    this.apply();
-  }*/
 
   ngAfterViewInit(): void {
-    this.apply();
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    requestAnimationFrame(() => {
+      this.apply();
+      this.cdr.detectChanges();
+    });
   }
 
-  apply() {
-    if (!this.isMobile) return;
+  @HostListener('window:resize')
+  onResize(): void {
+    this.checkWidth();
+    this.apply();
+    this.cdr.detectChanges();
+  }
 
-    this.targetEl = document.getElementById(this.targetId)!;
-    if (!this.targetEl) return;
+  apply(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
 
-    // Measure full height
-    this.fullHeight = this.targetEl.scrollHeight;
+    this.checkWidth();
 
-    // Apply clamp to measure clamped height
-    this.applyClamp(true);
-    this.clampedHeight = this.targetEl.getBoundingClientRect().height;
+    if (!this.targetEl) {
+      this.targetEl = document.getElementById(this.targetId);
+    }
 
-    // Decide if toggle should be shown
-    this.showToggle = this.fullHeight > this.clampedHeight;
+    if (!this.isMobile) {
+      if (this.targetEl) {
+        this.applyClamp(false);
+      }
+      this.textTruncated = false;
+      this.expanded = false;
+      return;
+    }
 
-    // Reset clamp state if not initially expanded
+    if (!this.targetEl) {
+      return;
+    }
+
+    // With -webkit-line-clamp, scrollHeight often equals the visible box — compare
+    // full layout height (clamp off) to the clamped box height instead.
+    this.textTruncated = this.measureTruncation();
+
     if (!this.expanded) {
       this.applyClamp(true);
+    } else {
+      this.applyClamp(false);
     }
   }
-  
-  private checkWidth() {
-    this.isMobile = this.broswerService.isMobile();
+
+  /**
+   * Returns true if applying line-clamp makes the box shorter than the natural text height.
+   */
+  private measureTruncation(): boolean {
+    if (!this.targetEl) {
+      return false;
+    }
+    this.applyClamp(false);
+    const natural = this.targetEl.scrollHeight;
+    this.applyClamp(true);
+    const clamped = this.targetEl.getBoundingClientRect().height;
+    return natural > clamped + 2;
+  }
+
+  private checkWidth(): void {
+    this.isMobile = this.browserService.isMobile();
   }
 
   toggle(): void {
     this.expanded = !this.expanded;
     this.applyClamp(!this.expanded);
+    this.cdr.detectChanges();
   }
 
-  private applyClamp(apply: boolean) {
+  private applyClamp(apply: boolean): void {
+    if (!this.targetEl) {
+      return;
+    }
     if (apply) {
       this.renderer.setStyle(this.targetEl, 'display', '-webkit-box');
       this.renderer.setStyle(this.targetEl, '-webkit-line-clamp', this.maxLines.toString());

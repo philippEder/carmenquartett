@@ -11,17 +11,17 @@
 }
 
 .about-image-container {    
-    width: 600px;
-    height: 450px;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    flex-shrink: 0;
 } 
 
 .about-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /*clip-path: inset(20px 10px 20px 10px);*/
-
 }
 
 .title-image-container {
@@ -33,7 +33,10 @@
 .title-image-container img {
   display: block;
   width: 100%;
-  height: 1031px;;
+  height: auto;
+  max-height: min(92vh, 1100px);
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-burger:hover {
@@ -42,9 +45,11 @@
 
 .image-burger {
     position: absolute;
-    padding: 8px 12px;
-    top: 1%;
-    right: 1%;
+    z-index: 2;
+    display: block;
+    padding: max(10px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 8px 12px;
+    top: 0;
+    right: 0;
     color: var(--accent);
 }
 
@@ -67,20 +72,89 @@
     color: white;
 }
 
-.image-buttons {
-    top: 73%;
+/* Title + CTAs: column like reference (headline, then Instagram + Book us) */
+.hero-overlay-stack {
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.25rem, 4vh, 2rem);
+    width: min(82vw, 52rem);
+    max-width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hero-overlay-stack .image-elements-container {
+    position: static;
+    left: auto;
+    top: auto;
+    right: auto;
+    transform: none;
+    padding: 0;
+}
+
+.image-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .image-title {
-    font-size: 80px;
-    top: 59%;
-    left: 50%;
-    color: white;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
+    font-size: clamp(3rem, 12vw, 6.5rem);
+    color: #fff;
+    max-width: 100%;
+    text-align: center;
+    padding-inline: 0.5rem;
+    box-sizing: border-box;
+    line-height: 1.08;
+}
 
+.image-title h1 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.75),
+        0 4px 24px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Reference-style Instagram: rounded square, burgundy border, icon in accent */
+#home .hero-overlay-stack .social-icon.instagram {
+    font-size: 1.5rem;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.65rem;
+    border: 2px solid var(--accent);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#home .hero-overlay-stack .social-icon.instagram:hover {
+    color: var(--accent);
+    background: #fff;
+    transform: scale(1.03);
+}
+
+#home .hero-overlay-stack .image-buttons .btn {
+    min-height: 3rem;
+    padding: 0.5rem 1.35rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 0.65rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .image-header-nav {
@@ -96,21 +170,23 @@
 }
 
 .feste-headline {
-    color: white;
-}
-
-.feste-headline-mobile   {
-    color: black !important;
+    color: #111;
 }
 
 .feste-background {
-    background-image: url(../../assets/images/background_2.webp);
+    background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.feste-background-mobile {
-    background-image: none !important;
+@media (min-width: 1200px) {
+    .feste-background {
+        background-image: url(../../assets/images/background_2.webp);
+    }
+
+    .feste-headline {
+        color: white;
+    }
 }
 
 .clamp-fix {
@@ -121,26 +197,180 @@
 }
 
 @media(min-width: 1200px){
-    .image-buttons {
-        top: 63%;
+    .hero-overlay-stack {
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: min(96vw, 52rem);
+        gap: clamp(0.85rem, 2.5vh, 1.35rem);
     }
 
-    .video {
-        width: 700px;
-        height: 450px;
+    /* Larger script title on wide screens (closer to original ~80px+ hero) */
+    .image-title {
+        white-space: nowrap;
+        font-size: clamp(4.5rem, 9vw, 7.5rem);
+        line-height: 1.06;
+    }
+
+    /* About: text | image on one row (same pattern as Feste) */
+    #about .centered {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    #about .centered .text-with-more-less {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: min(42rem, calc(50% - 0.75rem));
+    }
+
+    #about .centered .about-image-container {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: min(600px, calc(50% - 0.75rem));
+    }
+
+    /* Feste: video | text on one row (DOM: text then video; reverse for layout) */
+    .feste-background.centered {
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feste-background .text-with-more-less {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: min(42rem, calc(50% - 0.75rem));
+    }
+
+    .feste-video-wrap {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: min(920px, calc(50% - 0.75rem));
+    }
+
+    .feste-video-wrap .video {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        display: block;
     }
 }
 
-@media(max-width: 1200px) {
-    .title-image-container img {
-        height: unset;
+/* Laptop / small desktop (e.g. 1280×800): balance two columns, fill row, align image to text height */
+@media (min-width: 1200px) and (max-width: 1440px) {
+    #about .centered {
+        align-items: stretch;
     }
 
-    .image-title {
-        font-size: 30px;
+    #about .centered .text-with-more-less {
+        flex: 1 1 52%;
+        max-width: min(40rem, 54%);
     }
 
+    #about .centered .about-image-container {
+        flex: 1 1 42%;
+        max-width: min(520px, 48%);
+        aspect-ratio: auto;
+        align-self: stretch;
+        min-height: 0;
+    }
+
+    #about .centered .about-image-container img {
+        width: 100%;
+        height: 100%;
+        min-height: 260px;
+        object-fit: cover;
+    }
+
+    .feste-background.centered {
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .feste-background {
+        background-position: center center;
+    }
+
+    .feste-background .text-with-more-less {
+        flex: 1 1 50%;
+        max-width: min(38rem, 52%);
+    }
+
+    .feste-video-wrap {
+        flex: 1 1 48%;
+        max-width: min(640px, 50%);
+    }
+
+    .feste-video-wrap .video {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media(max-width: 1199px) {
     .feste-text {
         color: var(--muted);
+    }
+
+    /* Full-width embed below text (no 920px cap — avoids side gaps on tablet widths) */
+    #feste .mobile-only {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #feste .mobile-only iframe.video {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Vertically centered block (title + CTAs), like reference mobile hero */
+    .hero-overlay-stack {
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-left: max(0.5rem, env(safe-area-inset-left));
+        padding-right: max(0.5rem, env(safe-area-inset-right));
+    }
+
+    #home .hero-overlay-stack .social-icon.instagram {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+        border-radius: 0.5rem;
+        border-width: 1.5px;
+    }
+
+    #home .hero-overlay-stack .image-buttons .btn {
+        min-height: 2.5rem;
+        padding: 0.35rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    #home .hero-overlay-stack .image-buttons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-overlay-stack {
+        gap: clamp(0.4rem, 1.5vh, 0.65rem);
+    }
+}
+
+@media(max-width: 480px) {
+    .image-title {
+        white-space: normal;
+        line-height: 1.05;
+    }
+
+    .image-title h1 {
+        line-height: 1.05;
     }
 }
