@@ -10,37 +10,40 @@
     <a class="image-header-nav" (click)="smoothScrollTo('contact')">Kontakt</a>
   </nav>
 
-  <div class="image-elements-container image-title">
-    <h1>Carmen Quartett</h1>
-  </div>
+  <div class="hero-overlay-stack">
+    <div class="image-elements-container image-title">
+      <h1>Carmen Quartett</h1>
+    </div>
 
-  <div class="image-elements-container image-buttons">
-    <div>
+    <div class="image-elements-container image-buttons">
+      <div>
         <a href="https://www.instagram.com/carmen_quartett" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
-            <i class="fab fa-instagram"></i>
+          <i class="fab fa-instagram"></i>
         </a>
       </div>
       <div class="book-us button-image-element">
         <button class="btn" (click)="smoothScrollTo('contact')">Book us</button>
       </div>
+    </div>
   </div>
-  
 
   <img class="card-bottom" src="assets/images/title.webp">
 </section>
 
 <section id="about" class="card">
   <div class="centered">
-    <div id="carmenQuartettText" class="hero-text text clamp-fix">
+    <div class="text-with-more-less text">
+      <div id="carmenQuartettText" class="hero-text clamp-fix">
         <h1 class="desktop-only">Carmen Quartett</h1>
         <p><i>Mehr als Mozart</i><br/><br/>
         Seit 2014 spielen Marianne Brandstettner (Violine), Vanessa Lettner (Violine), Lucia Schwendinger (Bratsche) und Carmen Duschlbauer (Cello) im selben Takt.<br/><br/>
         Was an der Bruckneruni begann, führt das Linzer Streichquartett heute von klassischen Bühnen über Bauernhöfe bis hin zu musikalischen Galaxien. <br/><br/> Das Carmen Quartett mixt Tradition mit Innovation, Streichersound mit Riffs und Dancing Queen mit Bach Kantaten - und kommt dabei voll ohne Mischpult aus. Ob Mozart oder Weltmusik – wir setzen auf erstklassige Acoustics mit Stil. Gänsehaut? Garantiert!</p>
+      </div>
+      <app-more-less
+            targetId="carmenQuartettText"
+            [maxLines]="11">
+      </app-more-less>
     </div>
-    <app-more-less
-          targetId="carmenQuartettText"
-          [maxLines]="11">
-    </app-more-less>
 
     <div class="desktop-only about-image-container">
       <img class="card-bottom" src="./assets/images/about.webp">
@@ -55,12 +58,10 @@
 
 
 <section id="feste" class="card" style="padding: 0px;">
-  <div class="centered feste-background" [class.feste-background-mobile]="isMobile">
-    <div class="desktop-only">
-      <iframe class="video" src="https://www.youtube.com/embed/eBkIowHwpKg" allowfullscreen></iframe>
-    </div>
-     <div id="festeText" class="hero-text text">
-        <h1 class="feste-headline" [class.feste-headline-mobile]="isMobile">Feste & Hochzeiten</h1>
+  <div class="centered feste-background">
+    <div class="text-with-more-less text">
+      <div id="festeText" class="hero-text">
+        <h1 class="feste-headline">Feste & Hochzeiten</h1>
         <p class="feste-text clamp-fix">
           <i>Nie zu spät, um JA! zu sagen</i> <br/><br/>
 
@@ -70,11 +71,15 @@
           Unser Repertoire reicht von klassischen Streichquartetten bis zu Rock & Pop, Volksmusik, berührenden
           Love Songs und originellen Crossovers.
         </p>
+      </div>
+      <app-more-less
+         targetId="festeText"
+         [maxLines]="11">
+      </app-more-less>
     </div>
-    <app-more-less
-       targetId="festeText"
-       [maxLines]="11">
-    </app-more-less>
+    <div class="desktop-only feste-video-wrap">
+      <iframe class="video" src="https://www.youtube.com/embed/eBkIowHwpKg" allowfullscreen></iframe>
+    </div>
   </div>
   <div class="mobile-only">
     <iframe class="card-bottom video" src="https://www.youtube.com/embed/eBkIowHwpKg" allowfullscreen></iframe>

@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Concert } from './domain/Concert';
 import { BrowserService } from '../service/BrowserService';
 
@@ -8,7 +8,7 @@ import { BrowserService } from '../service/BrowserService';
   styleUrls: ['./concerts.component.css'],
   standalone: false
 })
-export class ConcertsComponent {
+export class ConcertsComponent implements OnInit {
 
   CONCERT_IMAGES_BASE: string = "assets/images/concerts/"
 
@@ -58,18 +58,18 @@ export class ConcertsComponent {
   }
 
   computeAmountOfGigsToShow() {
+    const w = this.broswerService.getInnerWidth();
     let amountOfGigsToShow = 3;
-
-
-    if (this.broswerService.isMobile()) {
+    if (w <= 640) {
       amountOfGigsToShow = 1;
-    } else {
-      if (this.broswerService.getInnerWidth() <= 1500) {
-        amountOfGigsToShow = 2;
-      }
+    } else if (w <= 1320) {
+      amountOfGigsToShow = 2;
     }
-
     this.amountOfGigsToShow = amountOfGigsToShow;
+    const maxStart = Math.max(0, this.upcoming.length - amountOfGigsToShow);
+    if (this.currentIndex > maxStart) {
+      this.currentIndex = maxStart;
+    }
   }
 
   upcoming: Concert[] = [

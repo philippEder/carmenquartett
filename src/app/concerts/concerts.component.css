@@ -1,5 +1,13 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
 .concerts-title {
-  padding-top: 25px;
+  padding-top: clamp(1rem, 3vw, 1.5rem);
 }
 
 .concert-title {
@@ -15,42 +23,80 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: clamp(8px, 2vw, 20px);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0 clamp(0.25rem, 2vw, 0.75rem);
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
 }
 
 .gigs-wrapper {
   display: flex;
-  gap: 30px;
+  gap: clamp(12px, 3vw, 30px);
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
+/* Share row using parent width — avoid 100vw (causes iPad horizontal page scroll) */
 .concert {
-  width: 450px;
-  flex-shrink: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: min(450px, 100%);
   padding: 10px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
 }
 
 .concert-image {
-  height: 608px;
   width: 100%;
+  height: auto;
+  aspect-ratio: 450 / 608;
+  object-fit: cover;
   border-radius: 6px;
 }
 
 .arrow {
-  font-size: 40px;
+  font-size: clamp(28px, 6vw, 40px);
   background: none;
   border: none;
   cursor: pointer;
   user-select: none;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
 }
 
-@media(max-width: 1200px) {
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
   .concert {
-    width: auto;
-    flex-shrink: unset;
+    flex: 0 0 auto;
+    width: min(450px, 100%);
+    max-width: 100%;
   }
 
   .concert-image {
-    height: unset;
+    aspect-ratio: 3 / 4;
+    max-height: 70vh;
+    object-fit: cover;
   }
 
+  .concert-description {
+    min-height: 0;
+  }
 }
