@@ -1,4 +1,5 @@
 # Compiled output
+dist/
 /main.*.js
 /polyfills.*.js
 /runtime.*.js
