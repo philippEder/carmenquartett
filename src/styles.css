@@ -196,6 +196,21 @@ p {
     display: none !important;
   }
 
+  #contact .hero-text h1 {
+    font-size: clamp(3.1rem, 10.5vw, 4.4rem);
+    line-height: 1.1;
+  }
+
+  #contact .contact-form label,
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    font-size: 1.0625rem;
+  }
+
+  #contact .hero-text h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1199px) {

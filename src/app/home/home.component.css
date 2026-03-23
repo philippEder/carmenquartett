@@ -312,6 +312,17 @@
 }
 
 @media(max-width: 1199px) {
+    #about .hero-text p,
+    #feste .feste-text {
+        font-size: 1.125rem;
+        line-height: 1.65;
+    }
+
+    #feste .feste-headline {
+        font-size: clamp(3.1rem, 10.5vw, 4.4rem);
+        line-height: 1.1;
+    }
+
     .feste-text {
         color: var(--muted);
     }

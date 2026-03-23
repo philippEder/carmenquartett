@@ -100,3 +100,19 @@
     min-height: 0;
   }
 }
+
+@media (max-width: 1199px) {
+  .concerts-title h1 {
+    font-size: clamp(3.1rem, 10.5vw, 4.4rem);
+    line-height: 1.1;
+  }
+
+  .concert-details {
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  .concert-title {
+    font-size: 1.2rem;
+  }
+}
