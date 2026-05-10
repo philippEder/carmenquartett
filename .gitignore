@@ -53,6 +53,8 @@ pnpm-debug.log*
 
 /node_modules
 
+/certbot
+
 /.angular
 scully.log
 scullyStats.json
