@@ -17,6 +17,10 @@
 
 .concert-description {
   min-height: 65px;
+  white-space: pre-line;
+}
+
+.concert-date {
 }
 
 .carousel-container {
@@ -98,6 +102,11 @@
 
   .concert-description {
     min-height: 0;
+    white-space: pre-line;
+  }
+
+  .concert-date {
+    white-space: pre-line;
   }
 }
 

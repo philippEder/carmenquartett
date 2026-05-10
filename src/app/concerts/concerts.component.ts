@@ -74,9 +74,18 @@ export class ConcertsComponent implements OnInit {
 
   upcoming: Concert[] = [
     {
+        image: this.CONCERT_IMAGES_BASE + 'concert-koste-die-welt.webp',
+        title: 'Koste die Welt',
+        dates: ["20.05.2026 19:30 \n Vituskirche Oberregau \n \n",
+                "04.06.2026 20:00 \n Café Viele Leute Linz"
+        ],
+        description: "Dvoraks Amerikanisches Streichquartett und Volksmusik aus aller Welt. \n \n Eintritt frei!",
+        link: null
+    },
+    {
         image: this.CONCERT_IMAGES_BASE + 'concert-brunch.webp',
         title: 'Musik Brunch - Kunst am Hof-Festival',
-        dates: ["09.08.2026 10:30 Sipbach 6 4055 Pucking"],
+        dates: ["09.08.2026 10:30 \n Sipbach 6 4055 Pucking"],
         description: null,
         link: {
           link: 'https://kupfticket.com/en/events/crosscultural-musikbrunch-koste-die-welt',
@@ -86,9 +95,9 @@ export class ConcertsComponent implements OnInit {
     {
         image: this.CONCERT_IMAGES_BASE + 'concert-nordlichter.webp',
         title: 'Nordlichter',
-        dates: ["22.05.2024 19:00 Vituskirche Oberregau",
-                "06.06.2024 10:30 RAUMSCHIFF Linz", 
-                "09.06.2024 10:30 Musikschule Schallerbach"
+        dates: ["22.05.2024 19:00 \n Vituskirche Oberregau \n \n",
+                "06.06.2024 10:30 \n RAUMSCHIFF Linz \n \n", 
+                "09.06.2024 10:30 \n Musikschule Schallerbach"
                ],
         description: 'Eintritt Frei',
         link: null
@@ -97,8 +106,8 @@ export class ConcertsComponent implements OnInit {
         image: this.CONCERT_IMAGES_BASE + 'concert-carmenquartett.webp', 
         title: 'Carmenquartett', 
         dates: [
-                "11.07.2022 19:00 Kunst am Hof Spibach 6 4055 Pucking", 
-                "12.07.2022 19:30 Kerschbaum 61 4261 Rainbach i.M."
+                "11.07.2022 19:00 \n Kunst am Hof Spibach 6 4055 Pucking \n \n", 
+                "12.07.2022 19:30 \n Kerschbaum 61 4261 Rainbach i.M."
               ], 
         description: null,
         link: null
