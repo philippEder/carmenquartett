@@ -99,7 +99,7 @@ export class ConcertsComponent implements OnInit {
                 "06.06.2024 10:30 \n RAUMSCHIFF Linz \n \n", 
                 "09.06.2024 10:30 \n Musikschule Schallerbach"
                ],
-        description: 'Eintritt Frei',
+        description: 'Eintritt frei!',
         link: null
     },
     { 
