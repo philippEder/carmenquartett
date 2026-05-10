@@ -4,33 +4,33 @@
   </div>
 
   <div class="carousel-container">
-    
-    <!-- Left arrow -->
-    <button class="arrow" [disabled]="isFirstVisible" (click)="prev()">
+
+    <button class="arrow arrow-left" [disabled]="isFirstVisible" (click)="prev()" type="button" aria-label="Vorherige Konzerte">
       ‹
     </button>
 
-    <!-- Visible gigs -->
-    <div class="gigs-wrapper">
-      <div class="concert" *ngFor="let gig of visibleGigs">
-        <img class="concert-image" [src]="gig.image" />
-        <div class="concert-details">
-          <div class="concert-title">{{ gig.title }}</div>
-          <br/>
-          <div *ngFor="let theDate of gig.dates">
-            <div class="concert-date">{{ theDate }}</div>
-          </div>
-          <br/>
-          <a *ngIf="gig.link" [href]="gig.link.link" target="_blank">{{gig.link.text}}</a>
-          <div *ngIf="gig.description" class="concert-description">{{ gig.description }}</div>
-        </div>
+    <div class="gigs-images-row">
+      <div class="concert-image-cell" *ngFor="let gig of visibleGigs">
+        <img class="concert-image" [src]="gig.image" alt="" />
       </div>
     </div>
 
-    <!-- Right arrow -->
-    <button class="arrow" [disabled]="isLastVisible" (click)="next()">
+    <button class="arrow arrow-right" [disabled]="isLastVisible" (click)="next()" type="button" aria-label="Nächste Konzerte">
       ›
     </button>
+
+    <div class="gigs-details-row">
+      <div class="concert-details-column" *ngFor="let gig of visibleGigs">
+        <div class="concert-title">{{ gig.title }}</div>
+        <br/>
+        <div *ngFor="let theDate of gig.dates">
+          <div class="concert-date">{{ theDate }}</div>
+        </div>
+        <br/>
+        <a *ngIf="gig.link" [href]="gig.link.link" target="_blank">{{gig.link.text}}</a>
+        <div *ngIf="gig.description" class="concert-description">{{ gig.description }}</div>
+      </div>
+    </div>
 
   </div>
 </div>
